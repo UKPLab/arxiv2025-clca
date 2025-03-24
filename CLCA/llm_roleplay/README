@@ -1,0 +1,4 @@
+## Notice
+This is a modified version of [LLM-roleplay](https://github.com/UKPLab/llm-roleplay).
+Non-generic dependencies are removed.
+Please see the original repository for more details.

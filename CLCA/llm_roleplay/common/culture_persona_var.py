@@ -1,0 +1,40 @@
+NATIONALITY = ["Mexican", "Chinese", "Japanese", "German", "British"]
+
+COUNTRY2INGLEHART = {
+    "Mexican": ["exhibits little self-expression values", "moderately traditional"],
+    "Chinese": ["exhibits little survival values", "moderately secular"],
+    "Japanese": ["exhibits moderate self-expression values", "uttermost secular"],
+    "German": ["exhibits uttermost self-expression values", "moderately secular"],
+    "British": ["exhibits uttermost self-expression values", "moderately secular"],
+}
+
+COUNTRY2HOFSTEDE = {
+    "Mexican": ["highly hierarchical",
+                "moderately collective",
+                "moderate motivation for achievement and success",
+                "high uncertainty avoidance",
+                "highly normative", "highly indulgent"],
+    "Chinese": ["highly hierarchical",
+                "moderately collective",
+                "moderate motivation for achievement and success",
+                "moderately risk-taking",
+                "highly pragmatic", "highly restrained"],
+    "Japanese": ["moderately hierarchical",
+                 "moderately individualistic",
+                 "high motivation for achievement and success",
+                 "high uncertainty avoidance",
+                 "highly pragmatic",
+                 "moderately restrained"],
+    "German": ["moderately equal",
+               "highly individualistic",
+               "moderate motivation for achievement and success",
+               "moderately uncertainty avoidance",
+               "moderately pragmatic",
+               "moderately restrained"],
+    "British": ["moderately equal",
+                "highly individualistic",
+                "moderate motivation for achievement and success",
+                "moderately risk-taking",
+                "moderately pragmatic",
+                "moderately indulgent"],
+}

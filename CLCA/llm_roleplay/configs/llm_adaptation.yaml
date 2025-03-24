@@ -1,0 +1,45 @@
+exp_name: "llama3.1_{template_style}_tuning_{suffix}"
+architecture: llama3.1
+model_name_or_path: "models--llama-3.1/hf/8B-Instruct"
+seed: 42
+should_log: true
+using_self_data: false
+template_style: vanilla
+culture: Chinese
+template_culture: British
+train_data_type: "all_combined"
+train_data_path: "CLCA/dialogs/{culture}/{template_style}/llama70b/{train_data_type}.jsonl"
+output_dir: "CLCA/outputs"
+device: "cuda"
+train: true
+fp16: true
+sample_number: 5
+eval_only: False
+model_max_length: 2048
+val_set_size: 10
+lr: 0.0001
+batch_size: 2
+eval_steps: 50
+num_train_epochs: 3
+gradient_accumulation_steps: 4
+preprocessing_num_workers: 1
+lora:
+  lora_r: 4
+  lora_alpha: 0.1
+  lora_target_modules: ["q_proj","v_proj"]
+  lora_dropout: 0.5
+evaluation:
+  pretrained_peft: ""
+  exp_name: "llama3.1_{template_style}_tuning_{suffix}"
+  model_name: llama3.1
+  culture: Chinese
+  template_culture: British
+  data_dir: "CLCA/data/WorldValuesBench/{culture}/full"
+  codebook_fn: "CLCA/data/WorldValuesBench/dataset_construction/codebook.json"
+  qa_metadata_fn: "CLCA/data/WorldValuesBench/question_metadata_{culture}.json"
+  result_dir: "CLCA/results/wvs_eval_results/"
+  qids: [ 'Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8', 'Q9', 'Q10', 'Q11', 'Q12', 'Q13', 'Q14', 'Q15', 'Q16', 'Q17', 'Q18', 'Q19', 'Q20', 'Q21', 'Q22', 'Q23', 'Q24', 'Q25', 'Q26', 'Q27', 'Q28', 'Q29', 'Q30', 'Q31', 'Q32', 'Q33', 'Q34', 'Q35', 'Q36', 'Q37', 'Q38', 'Q39', 'Q40', 'Q41', 'Q43', 'Q44', 'Q45' ]
+  model_responder: llama3.1 
+defaults:
+    - model_responder: llama3.1 
+    - _self_

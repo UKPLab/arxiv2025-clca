@@ -1,0 +1,12 @@
+type:
+  _target_: llm_roleplay.models.model_causal_language.ModelCausalLanguageSocial
+name: "models--llama-3.1/hf/8B-Instruct"
+cache_dir: "/storage"
+dtype: torch.float16
+generate:
+  do_sample: True
+  max_new_tokens: 500
+  top_p: 0.7
+conv_template:
+  system_msg: "{SYSTEM}"
+  user_msg: "{USER_PROMPT}"

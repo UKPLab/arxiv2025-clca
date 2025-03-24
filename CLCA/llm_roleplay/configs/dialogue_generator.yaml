@@ -1,0 +1,18 @@
+# @package _global_
+seed: 42
+experiment_name: generate 
+device: "auto" # auto, cuda, cpu (default)
+workdir: './'
+dataset: "CLCA/data/scenarios/{culture}_scenarios.txt"
+culture: Chinese
+template_culture: British
+spec_tokens: null
+num_samples: 1
+format_template_key: vanilla
+actions: ["generate"] #["judge", "filter"]
+num_turns: 10 #5 is for chinese 
+defaults:
+  - model_inquirer: llama70b
+  - model_responder: llama70b
+  - model_judge: gpt
+  - _self_

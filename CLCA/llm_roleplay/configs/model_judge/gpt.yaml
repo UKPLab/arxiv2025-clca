@@ -1,0 +1,3 @@
+type: "openai"
+name: "gpt-4"
+max_tokens: 200

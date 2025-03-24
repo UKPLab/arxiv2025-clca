@@ -1,0 +1,13 @@
+# @package _global_
+seed: 42
+experiment_name: intent_aug
+format_template_key: intent
+device: "auto"
+workdir: './'
+dataset: "CLCA/dialogs/{culture}/vanilla_zh/llama70b/example.jsonl"
+culture: Chinese
+spec_tokens: null
+defaults:
+  - model_inquirer: llama70b
+  - model_responder: llama70b
+  - _self_
