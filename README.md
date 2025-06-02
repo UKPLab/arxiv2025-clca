@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="static/round_clca.jpg" alt="Logo" height="200">
+  <img src="static/round_clca.png" alt="Logo" height="200">
 </p>
 <div align="center">
     <h1 style="margin: 0">Cultural Learning-Based Culture Adaptation of Language Models</h1>
@@ -29,7 +29,8 @@ To extract data for a specific culture, please refer to the WVS dataset and filt
 After the data extraction, you should have a `demographic_qa` and a `value_qa` file, in addition, you should have a `question_metadata` file and a `codebook.json`.
 
 The hyper-parameters and paths in this repository are manged using Hydra. 
-Please see example config files in `llm_roleplaying/configs`, there are a couple of places requiring updates.
+Please see example config files in `llm_roleplaying/configs`. 
+Currently, we load base models from a storage instead of downloading it every time, please update the `cache_dir` in inquirer/responder configs to your own storage location.
 
 The `model_inquirer` and `model_responder` in the config folder contain configurations for two LLMs used in role-play (Participant 1 and Participant 2).
 
@@ -44,14 +45,18 @@ The overall workflow of our work:
 ## Citation
 If you find this repository useful, please cite the following paper:
 ```
-@misc{liu2025clca,
-  title={Cultural Learning-Based Culture Adaptation of Language Models},
-  author={Chen Cecilia Liu and Anna Korhonen and Iryna Gurevych},
-  year={2025},
-  eprint={2504.02953},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL},
-  url={http://arxiv.org/abs/2504.02953},
+@article{liu2025clca,
+  author       = {Chen Cecilia Liu and
+                  Anna Korhonen and
+                  Iryna Gurevych},
+  title        = {Cultural Learning-Based Culture Adaptation of Language Models},
+  journal      = {ArXiv preprint},
+  volume       = {abs/2504.02953},
+  year         = {2025},
+  url          = {https://doi.org/10.48550/arXiv.2504.02953},
+  doi          = {10.48550/ARXIV.2504.02953},
+  eprinttype    = {arXiv},
+  eprint       = {2504.02953},
 }
 ```
 
